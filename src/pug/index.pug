@@ -1,188 +1,396 @@
 doctype html
-html(lang='en')
+html(lang='pt-BR')
 
     head
-
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+        meta(name='description', content='AVA - Assistente Virtual Acessível')
+        meta(name='author', content='Equipe AVA')
 
-        title New Age - Start Bootstrap Theme
+        title AVA - Assistente Virtual Acessível
 
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
-        // Bootstrap icons
+        // Bootstrap Icons
         link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet')
 
-        // Google fonts
+        // Google Fonts
         link(rel='preconnect', href='https://fonts.gstatic.com')
         link(href='https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap', rel='stylesheet')
 
-        // Core theme CSS (includes Bootstrap)
+        // CSS
         link(href='css/styles.css', rel='stylesheet')
 
     body#page-top
 
-        // Navigation
+        // =========================
+        // NAVBAR
+        // =========================
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.shadow-sm
             .container.px-5
-                a.navbar-brand.fw-bold(href='#page-top') Start Bootstrap
-                button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+
+                a.navbar-brand.fw-bold(href='#page-top') AVA
+
+                button.navbar-toggler(
+                    type='button'
+                    data-bs-toggle='collapse'
+                    data-bs-target='#navbarResponsive'
+                    aria-controls='navbarResponsive'
+                    aria-expanded='false'
+                    aria-label='Abrir menu'
+                )
                     | Menu
                     i.bi-list
+
                 #navbarResponsive.collapse.navbar-collapse
                     ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
                         li.nav-item
-                            a.nav-link.me-lg-3(href='#features') Features
-                        li.nav-item
-                            a.nav-link.me-lg-3(href='#download') Download
-                    button.btn.btn-primary.rounded-pill.px-3.mb-2.mb-lg-0(data-bs-toggle='modal', data-bs-target='#feedbackModal')
-                        span.d-flex.align-items-center
-                            i.bi-chat-text-fill.me-2
-                            span.small Send Feedback
+                            a.nav-link.me-lg-3(href='#sobre') O projeto
 
-        // Mashead header
+                        li.nav-item
+                            a.nav-link.me-lg-3(href='#funciona') Como funciona
+
+                        li.nav-item
+                            a.nav-link.me-lg-3(href='#recursos') Recursos
+
+                        li.nav-item
+                            a.nav-link.me-lg-3(href='#contato') Contato
+
+                    a.btn.btn-primary.rounded-pill.px-4.mb-2.mb-lg-0(href='#aplicativo')
+                        span.d-flex.align-items-center
+                            i.bi-mic-fill.me-2
+                            span Conheça o AVA
+
+
+        // =========================
+        // HERO
+        // =========================
         header.masthead
             .container.px-5
                 .row.gx-5.align-items-center
+
                     .col-lg-6
-                        // Mashead text and app badges
                         .mb-5.mb-lg-0.text-center.text-lg-start
-                            h1.display-1.lh-1.mb-3 Showcase your app beautifully.
-                            p.lead.fw-normal.text-muted.mb-5 Launch your mobile app landing page faster with this free, open source theme from Start Bootstrap!
-                            .d-flex.flex-column.flex-lg-row.align-items-center
-                                a.me-lg-3.mb-4.mb-lg-0(href='#!')
-                                    img.app-badge(src='assets/img/google-play-badge.svg', alt='...')
-                                a(href='#!')
-                                    img.app-badge(src='assets/img/app-store-badge.svg', alt='...')
+
+                            span.badge.rounded-pill.bg-primary.bg-gradient.text-white.mb-3
+                                i.bi-universal-access.me-2
+                                | Tecnologia e acessibilidade
+
+                            h1.display-1.lh-1.mb-3
+                                | Sua voz,
+                                br
+                                | sua autonomia.
+
+                            p.lead.fw-normal.text-muted.mb-5
+                                | O AVA é um assistente virtual acessível desenvolvido para facilitar a comunicação e aumentar a autonomia de pessoas com deficiência motora no dia a dia.
+
+                            .d-flex.flex-column.flex-lg-row.align-items-center.justify-content-center.justify-content-lg-start
+                                a.btn.btn-primary.btn-lg.rounded-pill.px-4.py-3.me-lg-3.mb-3.mb-lg-0(href='#aplicativo')
+                                    i.bi-mic-fill.me-2
+                                    | Conheça o AVA
+
+                                a.btn.btn-outline-dark.btn-lg.rounded-pill.px-4.py-3(href='#funciona')
+                                    i.bi-info-circle.me-2
+                                    | Saiba mais
+
                     .col-lg-6
-                        // Masthead device mockup feature
                         .masthead-device-mockup
                             include includes/gradient-circle
                             include includes/shape-1
                             include includes/shape-2
-                            .device-wrapper
-                                .device(data-device='iPhoneX', data-orientation='portrait', data-color='black')
-                                    .screen.bg-black
-                                        // PUT CONTENTS HERE:
-                                        // * * This can be a video, image, or just about anything else.
-                                        // * * Set the max width of your media to 100% and the height to
-                                        // * * 100% like the demo example below.
-                                        video(muted='muted', autoplay='', loop='', style='max-width: 100%; height: 100%;')
-                                            source(src='assets/img/demo-screen.mp4', type='video/mp4')
 
-        // Quote/testimonial aside
+                            .device-wrapper
+                                .device(
+                                    data-device='iPhoneX'
+                                    data-orientation='portrait'
+                                    data-color='black'
+                                )
+                                    .screen.bg-black
+                                        .d-flex.flex-column.justify-content-center.align-items-center.h-100.p-4.text-white.text-center
+                                            i.bi-mic-fill(style='font-size: 4rem;')
+                                            h3.mt-4 AVA
+                                            p.mb-0 Sua voz, sua autonomia.
+
+
+        // =========================
+        // FRASE
+        // =========================
         aside.text-center.bg-gradient-primary-to-secondary
             .container.px-5
                 .row.gx-5.justify-content-center
                     .col-xl-8
-                        .h2.fs-1.text-white.mb-4 "An intuitive solution to a common problem that we all face, wrapped up in a single app!"
-                        img(src='assets/img/tnw-logo.svg', alt='...', style='height: 3rem;')
+                        h2.fs-1.text-white.mb-4
+                            | “Pequenos comandos podem transformar grandes desafios em novas possibilidades.”
 
-        // App features section
-        section#features
+                        p.text-white-50.mb-0
+                            | Acessibilidade, comunicação e tecnologia trabalhando juntas.
+
+
+        // =========================
+        // SOBRE O PROJETO
+        // =========================
+        section#sobre
             .container.px-5
                 .row.gx-5.align-items-center
-                    .col-lg-8.order-lg-1.mb-5.mb-lg-0
-                        .container-fluid.px-5
-                            .row.gx-5
-                                .col-md-6.mb-5
-                                    // Feature item
-                                    .text-center
-                                        i.bi-phone.icon-feature.text-gradient.d-block.mb-3
-                                        h3.font-alt Device Mockups
-                                        p.text-muted.mb-0 Ready to use HTML/CSS device mockups, no Photoshop required!
-                                .col-md-6.mb-5
-                                    // Feature item
-                                    .text-center
-                                        i.bi-camera.icon-feature.text-gradient.d-block.mb-3
-                                        h3.font-alt Flexible Use
-                                        p.text-muted.mb-0 Put an image, video, animation, or anything else in the screen!
-                            .row
-                                .col-md-6.mb-5.mb-md-0
-                                    // Feature item
-                                    .text-center
-                                        i.bi-gift.icon-feature.text-gradient.d-block.mb-3
-                                        h3.font-alt Free to Use
-                                        p.text-muted.mb-0 As always, this theme is free to download and use for any purpose!
-                                .col-md-6
-                                    // Feature item
-                                    .text-center
-                                        i.bi-patch-check.icon-feature.text-gradient.d-block.mb-3
-                                        h3.font-alt Open Source
-                                        p.text-muted.mb-0 Since this theme is MIT licensed, you can use it commercially!
-                    .col-lg-4.order-lg-0
-                        // Features section device mockup
-                        .features-device-mockup
-                            include includes/gradient-circle
-                            include includes/shape-1
-                            include includes/shape-2
-                            .device-wrapper
-                                .device(data-device='iPhoneX', data-orientation='portrait', data-color='black')
-                                    .screen.bg-black
-                                        // PUT CONTENTS HERE:
-                                        // * * This can be a video, image, or just about anything else.
-                                        // * * Set the max width of your media to 100% and the height to
-                                        // * * 100% like the demo example below.
-                                        video(muted='muted', autoplay='', loop='', style='max-width: 100%; height: 100%;')
-                                            source(src='assets/img/demo-screen.mp4', type='video/mp4')
 
-        // Basic features section
-        section.bg-light
+                    .col-lg-6.order-lg-1
+                        .text-center.text-lg-start
+                            span.text-gradient.fw-bold O PROJETO
+
+                            h2.display-4.lh-1.mb-4
+                                | Tecnologia pensada para a acessibilidade.
+
+                            p.lead.fw-normal.text-muted.mb-4
+                                | O AVA nasceu a partir de uma necessidade: facilitar a comunicação de pessoas com deficiência motora que podem encontrar dificuldades para utilizar dispositivos e realizar tarefas do cotidiano.
+
+                            p.text-muted
+                                | A proposta é utilizar comandos de voz como uma forma simples e acessível de interação, permitindo que o usuário tenha mais independência em diferentes situações.
+
+
+                    .col-lg-6.order-lg-0
+                        .text-center
+                            i.bi-universal-access.text-gradient(style='font-size: 12rem;')
+
+
+        // =========================
+        // COMO FUNCIONA
+        // =========================
+        section#funciona.bg-light
             .container.px-5
-                .row.gx-5.align-items-center.justify-content-center.justify-content-lg-between
-                    .col-12.col-lg-5
-                        h2.display-4.lh-1.mb-4 Enter a new age of web design
-                        p.lead.fw-normal.text-muted.mb-5.mb-lg-0 This section is perfect for featuring some information about your application, why it was built, the problem it solves, or anything else! There's plenty of space for text here, so don't worry about writing too much.
-                    .col-sm-8.col-md-6
-                        .px-5.px-sm-0
-                            img.img-fluid.rounded-circle(src='https://source.unsplash.com/u8Jn2rzYIps/900x900', alt='...')
 
-        // Call to action section
+                .text-center.mb-5
+                    span.text-gradient.fw-bold COMO FUNCIONA
+
+                    h2.display-4.lh-1.mb-3
+                        | Um assistente controlado pela sua voz.
+
+                    p.lead.text-muted
+                        | O AVA foi pensado para tornar tarefas digitais mais acessíveis.
+
+                .row.gx-5
+
+                    .col-md-4.mb-5
+                        .text-center
+                            i.bi-mic.icon-feature.text-gradient.d-block.mb-3
+
+                            h3.font-alt Fale
+
+                            p.text-muted.mb-0
+                                | Utilize comandos de voz para interagir com o assistente sem depender exclusivamente de controles manuais.
+
+
+                    .col-md-4.mb-5
+                        .text-center
+                            i.bi-chat-dots.icon-feature.text-gradient.d-block.mb-3
+
+                            h3.font-alt Comunique-se
+
+                            p.text-muted.mb-0
+                                | Envie mensagens, faça ligações e utilize recursos de comunicação de maneira mais acessível.
+
+
+                    .col-md-4.mb-5
+                        .text-center
+                            i.bi-house-door.icon-feature.text-gradient.d-block.mb-3
+
+                            h3.font-alt Tenha mais autonomia
+
+                            p.text-muted.mb-0
+                                | O projeto pode auxiliar em tarefas dentro de casa e na interação com recursos compatíveis.
+
+
+        // =========================
+        // RECURSOS
+        // =========================
+        section#recursos
+            .container.px-5
+
+                .text-center.mb-5
+                    span.text-gradient.fw-bold RECURSOS
+
+                    h2.display-4.lh-1.mb-3
+                        | Pensado para diferentes necessidades.
+
+                    p.lead.text-muted
+                        | O AVA reúne recursos de comunicação e acessibilidade em um único ambiente.
+
+                .row.gx-5
+
+                    .col-md-6.mb-5
+                        .d-flex
+                            i.bi-chat-text-fill.text-gradient.me-4(style='font-size: 2.5rem;')
+
+                            div
+                                h3 Comunicação
+                                p.text-muted
+                                    | Facilita o envio de mensagens e o acesso a chamadas utilizando comandos de voz.
+
+
+                    .col-md-6.mb-5
+                        .d-flex
+                            i.bi-bell-fill.text-gradient.me-4(style='font-size: 2.5rem;')
+
+                            div
+                                h3 Pedido de ajuda
+                                p.text-muted
+                                    | Permite configurar contatos de confiança para situações em que o usuário precise solicitar ajuda.
+
+
+                    .col-md-6.mb-5
+                        .d-flex
+                            i.bi-house-door-fill.text-gradient.me-4(style='font-size: 2.5rem;')
+
+                            div
+                                h3 Casa inteligente
+                                p.text-muted
+                                    | Possibilidade de controlar recursos compatíveis da casa por meio de comandos de voz.
+
+
+                    .col-md-6.mb-5
+                        .d-flex
+                            i.bi-sliders.text-gradient.me-4(style='font-size: 2.5rem;')
+
+                            div
+                                h3 Personalização
+                                p.text-muted
+                                    | Configurações de voz, tamanho do texto, volume e outras opções para adaptar a experiência ao usuário.
+
+
+        // =========================
+        // APLICATIVO
+        // =========================
+        section#aplicativo.bg-light
+            .container.px-5
+                .row.gx-5.align-items-center
+
+                    .col-lg-6
+                        span.text-gradient.fw-bold O APLICATIVO
+
+                        h2.display-4.lh-1.mb-4
+                            | Tudo em um só lugar.
+
+                        p.lead.text-muted.mb-4
+                            | O aplicativo será o centro da solução de acessibilidade.
+
+                        ul.list-unstyled.text-muted
+                            li.mb-3
+                                i.bi-check-circle-fill.text-gradient.me-2
+                                | Comandos de voz
+
+                            li.mb-3
+                                i.bi-check-circle-fill.text-gradient.me-2
+                                | Comunicação por mensagens
+
+                            li.mb-3
+                                i.bi-check-circle-fill.text-gradient.me-2
+                                | Ligações
+
+                            li.mb-3
+                                i.bi-check-circle-fill.text-gradient.me-2
+                                | Pedido de ajuda
+
+                            li.mb-3
+                                i.bi-check-circle-fill.text-gradient.me-2
+                                | Configurações de acessibilidade
+
+                    .col-lg-6
+                        .text-center
+                            i.bi-phone.text-gradient(style='font-size: 15rem;')
+
+
+        // =========================
+        // PARA FAMILIARES
+        // =========================
+        section
+            .container.px-5
+                .row.gx-5.align-items-center.justify-content-center
+
+                    .col-lg-5
+                        h2.display-4.lh-1.mb-4
+                            | Acessibilidade também aproxima.
+
+                        p.lead.fw-normal.text-muted.mb-4
+                            | O AVA também pode contribuir para que familiares e pessoas de confiança acompanhem e apoiem o usuário.
+
+                        p.text-muted
+                            | A proposta é criar uma experiência que valorize a autonomia da pessoa com deficiência, oferecendo apoio quando necessário.
+
+
+                    .col-lg-5
+                        .text-center
+                            i.bi-people-fill.text-gradient(style='font-size: 10rem;')
+
+
+        // =========================
+        // CHAMADA FINAL
+        // =========================
         section.cta
             .cta-content
                 .container.px-5
+
                     h2.text-white.display-1.lh-1.mb-4
-                        | Stop waiting.
+                        | Sua voz pode
                         br
-                        | Start building.
-                    a.btn.btn-outline-light.py-3.px-4.rounded-pill(href='https://startbootstrap.com/theme/new-age', target='_blank') Download for free
+                        | abrir novos caminhos.
 
-        // App badge section
-        section#download.bg-gradient-primary-to-secondary
+                    a.btn.btn-outline-light.py-3.px-4.rounded-pill(href='#page-top')
+                        i.bi-arrow-up.me-2
+                        | Voltar ao início
+
+
+        // =========================
+        // CONTATO
+        // =========================
+        section#contato.bg-gradient-primary-to-secondary
             .container.px-5
-                h2.text-center.text-white.font-alt.mb-4 Get the app now!
-                .d-flex.flex-column.flex-lg-row.align-items-center.justify-content-center
-                    a.me-lg-3.mb-4.mb-lg-0(href='#!')
-                        img.app-badge(src='assets/img/google-play-badge.svg', alt='...')
-                    a(href='#!')
-                        img.app-badge(src='assets/img/app-store-badge.svg', alt='...')
 
-        // Footer
+                h2.text-center.text-white.font-alt.mb-4
+                    | Conheça o projeto AVA
+
+                p.text-center.text-white-50.mb-5
+                    | Projeto desenvolvido com foco em acessibilidade, comunicação e tecnologia.
+
+                .row.justify-content-center
+
+                    .col-lg-6
+                        .card.border-0.shadow
+                            .card-body.p-5.text-center
+
+                                i.bi-envelope-fill.text-gradient(style='font-size: 3rem;')
+
+                                h3.mt-3 Fale conosco
+
+                                p.text-muted
+                                    | Entre em contato para conhecer melhor o projeto e acompanhar seu desenvolvimento.
+
+                                a.btn.btn-primary.rounded-pill.px-4(href='mailto:contato@projetoava.com')
+                                    i.bi-envelope.me-2
+                                    | Entrar em contato
+
+
+        // =========================
+        // FOOTER
+        // =========================
         footer.bg-black.text-center.py-5
             .container.px-5
+
                 .text-white-50.small
-                    .mb-2 &copy; Your Website 2023. All Rights Reserved.
-                    a(href='#!') Privacy
+                    .mb-2
+                        | © AVA - Assistente Virtual Acessível 2026. Todos os direitos reservados.
+
+                    a(href='#sobre') O projeto
                     span.mx-1 &middot;
-                    a(href='#!') Terms
+
+                    a(href='#funciona') Como funciona
                     span.mx-1 &middot;
-                    a(href='#!') FAQ
-        
-        include includes/feedback-modal.pug
+
+                    a(href='#contato') Contato
+
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
